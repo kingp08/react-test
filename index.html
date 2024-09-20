@@ -1,11 +1,23 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div class="container">
-            <h3 class="title">Hello, CSS!</h3>
-            <button class="btn">Click me</button>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Click Counter</title>
+</head>
+<body>
+    <h2>Click Counter</h2>
+    <div id="click-count">Button clicked: 0 times</div>
+    <button id="click-btn" class="btn">Click Me!</button>
+
+    <script type="text/javascript">
+        let clickCounter = 0;
+
+        document.getElementById('click-btn').addEventListener('click', function() {
+            clickCounter++; // Increment the counter
+            document.getElementById('click-count').textContent = `Button clicked: ${clickCounter} times`;
+        });
+    </script>
+</body>
 </html>

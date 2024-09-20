@@ -1,11 +1,30 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div class="container">
-            <h3 class="title">Hello, CSS!</h3>
-            <button class="btn">Click me</button>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Array Manipulation</title>
+</head>
+<body>
+    <h2>Array Manipulation</h2>
+    <div id="original-array"></div>
+    <div id="sorted-array"></div>
+    <div id="sum"></div>
+    <button id="process-array-btn" class="btn">Process Array</button>
+
+    <script type="text/javascript">
+        const numbers = [5, 3, 8, 1, 2, 7];
+        document.getElementById('original-array').textContent = `Original Array: ${numbers.join(', ')}`;
+
+        document.getElementById('process-array-btn').addEventListener('click', function() {
+            const sortedNumbers = numbers.slice().sort((a, b) => a - b); // Using slice to avoid mutating the original array
+
+            const sum = sortedNumbers.reduce((accumulator, current) => accumulator + current, 0);
+
+            document.getElementById('sorted-array').textContent = `Sorted Array: ${sortedNumbers.join(', ')}`;
+            document.getElementById('sum').textContent = `Sum: ${sum}`;
+        });
+    </script>
+</body>
 </html>

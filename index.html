@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <html>
     <head>
         <link rel="stylesheet" href="./style.css">
@@ -8,4 +9,26 @@
             <button class="btn">Click me</button>
         </div>
     </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Change Text on Click</title>
+</head>
+<body>
+    <div id="text-container">Original Text</div>
+    <button id="change-text-btn" class="btn">Change Text</button>
+
+    <script type="text/javascript">
+        document.getElementById('change-text-btn').addEventListener('click', function() {
+            const textContainer = document.getElementById('text-container');
+            textContainer.textContent = 'Text changed!';
+            textContainer.style.color = 'red';
+        });
+    </script>
+</body>
+>>>>>>> Stashed changes
 </html>

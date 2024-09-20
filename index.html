@@ -1,11 +1,45 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div class="container">
-            <h3 class="title">Hello, CSS!</h3>
-            <button class="btn">Click me</button>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Form Validation</title>
+</head>
+<body>
+    <h2>7 Form</h2>
+    <form id="registration-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <div id="warning-message" class="warning"></div>
+
+    <script type="text/javascript">
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+        
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const warningMessage = document.getElementById('warning-message');
+        
+            // Clear previous warning message
+            warningMessage.textContent = '';
+        
+            if (!name || !email) {
+                warningMessage.textContent = 'Please fill in all fields.';
+            } else {
+                // If validation passes, you can submit the form or perform further actions
+                warningMessage.textContent = 'Form submitted successfully!';
+                warningMessage.style.color = 'green';
+                // Uncomment the following line to submit the form
+                // this.submit();
+            }
+        });
+    </script>
+</body>
 </html>

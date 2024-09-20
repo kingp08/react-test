@@ -1,11 +1,29 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div class="container">
-            <h3 class="title">Hello, CSS!</h3>
-            <button class="btn">Click me</button>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Add Div on Click</title>
+</head>
+<body>
+    <div id="container">
+        <h2>Dynamic Divs</h2>
+    </div>
+    <button id="add-div-btn" class="btn">Add Div</button>
+
+    <script type="text/javascript">
+        document.getElementById('add-div-btn').addEventListener('click', function() {
+            const container = document.getElementById('container');
+
+            // Create a new div element
+            const newDiv = document.createElement('div');
+            newDiv.className = 'dynamic-div'; // Add class for styling
+            newDiv.textContent = 'New Div Added!'; // Set text content
+
+            // Append the new div to the container
+            container.appendChild(newDiv);
+        });
+    </script>
+</body>
 </html>
